@@ -4,14 +4,11 @@ const postSchema = new mongoose.Schema(
 	{
 		title : {
 			type : String
-		},
-		body  : {
-			type : String
 		}
 	},
 	{ timestamps: true }
 );
 
-const post = mongoose.model('Post', postSchema);
+const post = mongoose.model('Bogh', postSchema);
 
 module.exports = post;
