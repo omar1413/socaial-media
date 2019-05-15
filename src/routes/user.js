@@ -1,9 +1,10 @@
 const express = require('express');
 const User = require('../controllers/user');
+const Validate = require('../models/user');
 
 const router = new express.Router();
 
-router.post('/users', User.create);
+router.post('/users', Validate.validate, User.create);
 
 router.get('/users', User.getAll);
 

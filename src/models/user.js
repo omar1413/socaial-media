@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const { check } = require('express-validator/check');
 
 const userSchema = new mongoose.Schema({
 	name     : {
@@ -15,6 +16,10 @@ const userSchema = new mongoose.Schema({
 		required : true
 	}
 });
+
+userSchema.statics.validate = () => {
+	console.log('hello');
+};
 
 userSchema.pre('save', async function(next) {
 	const user = this;

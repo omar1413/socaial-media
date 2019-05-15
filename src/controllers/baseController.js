@@ -4,15 +4,11 @@ exports.set = function(req, res) {
 
 	const request = {
 		async create(Obj, jsonData) {
-			console.log('hello');
-
 			try {
 				const obj = new Obj(jsonData);
 				await obj.save();
 				res.send(obj);
 			} catch (e) {
-				console.log(e);
-
 				res.status(500).send(e);
 			}
 		},
